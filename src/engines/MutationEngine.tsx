@@ -13,9 +13,18 @@ const MutationEngine: React.FC = () => {
 
   const currentScenario = mutatieScenarios[currentIndex];
 
+  // Extraheer unieke partijen uit het scenario om als opties te tonen
+  // In een echte app zouden deze opties in de data zitten.
+  const options = [
+    '',
+    currentScenario.oplossing.post1,
+    currentScenario.oplossing.post2,
+    'Collectief Belang',
+    'Individueel Belang',
+    'Consumentenwelvaart'
+  ].filter((v, i, a) => a.indexOf(v) === i); // Unique
+
   const handleCheck = () => {
-    // Basic check for the scenario. In a real app, this would be more flexible.
-    // For this prototype, we match against the mock data solution.
     const isCorrect = 
       (selections.post1 === currentScenario.oplossing.post1 && selections.dir1 === currentScenario.oplossing.verandering1 &&
        selections.post2 === currentScenario.oplossing.post2 && selections.dir2 === currentScenario.oplossing.verandering2) ||
@@ -42,30 +51,34 @@ const MutationEngine: React.FC = () => {
       {!feedback ? (
         <div className="mutation-controls">
           <div className="mutation-row">
-            <input 
-              type="text" 
-              placeholder="Partij/Indicator 1" 
+            <select 
               value={selections.post1}
               onChange={(e) => setSelections({...selections, post1: e.target.value})}
-            />
+            >
+              <option value="">Selecteer partij...</option>
+              {options.filter(o => o !== '').map(o => <option key={o} value={o}>{o}</option>)}
+            </select>
             <select value={selections.dir1} onChange={(e) => setSelections({...selections, dir1: e.target.value as '+' | '-'})}>
               <option value="+">Stijgt</option>
               <option value="-">Daalt</option>
             </select>
           </div>
           <div className="mutation-row">
-            <input 
-              type="text" 
-              placeholder="Partij/Indicator 2" 
+            <select 
               value={selections.post2}
               onChange={(e) => setSelections({...selections, post2: e.target.value})}
-            />
+            >
+              <option value="">Selecteer partij...</option>
+              {options.filter(o => o !== '').map(o => <option key={o} value={o}>{o}</option>)}
+            </select>
             <select value={selections.dir2} onChange={(e) => setSelections({...selections, dir2: e.target.value as '+' | '-'})}>
               <option value="+">Stijgt</option>
               <option value="-">Daalt</option>
             </select>
           </div>
-          <button className="primary" onClick={handleCheck}>Controleer Scenario</button>
+          <button className="primary" onClick={handleCheck} disabled={!selections.post1 || !selections.post2}>
+            Controleer Scenario
+          </button>
         </div>
       ) : (
         <div className={`feedback ${feedback.isCorrect ? 'correct' : 'incorrect'}`}>

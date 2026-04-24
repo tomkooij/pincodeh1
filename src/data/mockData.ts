@@ -145,6 +145,28 @@ export const mutatieScenarios: MutatieScenario[] = [
       verandering2: '-'
     },
     uitleg: 'Bij een prijzenoorlog dalen de marges voor beide partijen, wat meestal leidt tot lagere winsten voor beiden.'
+  },
+  {
+    id: 2,
+    scenario: 'Twee bedrijven besluiten een kartel te vormen en de prijzen te verhogen. Wat gebeurt er met de winst als ze zich beide aan de afspraak houden?',
+    oplossing: {
+      post1: 'Winst Bedrijf 1',
+      verandering1: '+',
+      post2: 'Winst Bedrijf 2',
+      verandering2: '+'
+    },
+    uitleg: 'Door samen te werken (coöperatie) kunnen bedrijven hun gezamenlijke winst verhogen ten opzichte van de concurrentiesituatie.'
+  },
+  {
+    id: 3,
+    scenario: 'Een van de twee kartelpartners besluit stiekem toch de prijs te verlagen (cheating) terwijl de ander de prijs hoog houdt. Wat is het effect?',
+    oplossing: {
+      post1: 'Winst Bedrieger',
+      verandering1: '+',
+      post2: 'Winst Trouwe Partner',
+      verandering2: '-'
+    },
+    uitleg: 'De bedrieger pakt een groot marktaandeel en verhoogt zijn winst, terwijl de trouwe partner klanten verliest en zijn winst ziet dalen.'
   }
 ];
 
