@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { begrippen } from '../data/mockData';
 
 const categories = [
-  'Simultaan',
-  'Sequentieel',
-  'Niet-coöperatief',
-  'Coöperatief'
+  'Collectief goed',
+  'Negatief extern effect',
+  'Quasi-collectief goed',
+  'Meeliftergedrag',
+  'Circulaire economie',
+  'Secundaire arbeidsvoorwaarden',
+  'Algemeen verbindend',
+  'Europese Unie'
 ];
 
 const CategorizeEngine: React.FC = () => {

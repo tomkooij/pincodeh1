@@ -1,187 +1,76 @@
 import type { Flashcard, MutatieScenario, Rekenvraag } from '../types';
 
 export const flashcards: Flashcard[] = [
-  {
-    id: 1,
-    stelling: 'Bij speltheorie kijk je alleen naar je eigen acties, zonder rekening te houden met anderen.',
-    isWaar: false,
-    uitleg: 'Speltheorie bestudeert juist de interactie tussen spelers en hoe zij hun beslissingen op elkaar afstemmen.'
-  },
-  {
-    id: 2,
-    stelling: 'In een simultaan spel nemen spelers op hetzelfde moment een beslissing.',
-    isWaar: true,
-    uitleg: 'Kenmerkend voor simultane spellen is dat spelers tegelijkertijd beslissen, zonder de keuze van de ander te weten.'
-  },
-  {
-    id: 3,
-    stelling: 'Een sequentieel spel wordt gekenmerkt door spelers die na elkaar reageren.',
-    isWaar: true,
-    uitleg: 'Bij een sequentieel spel doet de ene speler een zet, waarna de andere speler reageert (zoals bij schaken).'
-  },
-  {
-    id: 4,
-    stelling: 'Een eenmalig spel heeft vaker een coöperatieve uitkomst dan een herhaald spel.',
-    isWaar: false,
-    uitleg: 'Bij herhaalde spellen is de kans op samenwerking groter omdat spelers rekening houden met toekomstige rondes (reputatie).'
-  },
-  {
-    id: 5,
-    stelling: 'In een coöperatief spel werken spelers samen om het beste resultaat voor de hele groep te behalen.',
-    isWaar: true,
-    uitleg: 'Coöperatie betekent samenwerking gericht op het gezamenlijke belang.'
-  },
-  {
-    id: 6,
-    stelling: 'In een niet-coöperatief spel is het niet mogelijk om bindende afspraken te maken.',
-    isWaar: true,
-    uitleg: 'Spelers handelen hier puur uit eigenbelang en kunnen de ander niet dwingen tot samenwerking.'
-  },
-  {
-    id: 7,
-    stelling: 'Een opbrengstenmatrix (pay-offmatrix) wordt gebruikt om de uitkomsten van simultane spellen weer te geven.',
-    isWaar: true,
-    uitleg: 'De matrix toont de mogelijke opbrengsten voor alle spelers bij elke combinatie van strategieën.'
-  },
-  {
-    id: 8,
-    stelling: 'De best-responsemethode helpt bij het bepalen van de beste reactie op elke mogelijke actie van de ander.',
-    isWaar: true,
-    uitleg: 'Hiermee identificeer je de beste keuze voor jezelf, gegeven de actie van de tegenstander.'
-  },
-  {
-    id: 9,
-    stelling: 'In een Nash-evenwicht wil geen enkele speler eenzijdig zijn strategie veranderen.',
-    isWaar: true,
-    uitleg: 'Gegeven de keuze van de ander, is de eigen keuze de beste die men kan maken.'
-  },
-  {
-    id: 10,
-    stelling: 'Een gevangenendilemma (prisoners\' dilemma) leidt altijd tot de meest optimale uitkomst voor beide spelers.',
-    isWaar: false,
-    uitleg: 'Het dilemma is juist dat individueel rationeel gedrag leidt tot een uitkomst die voor beide spelers slechter is.'
-  },
-  {
-    id: 11,
-    stelling: 'Een dominante strategie is de keuze die altijd het beste resultaat geeft, ongeacht wat de ander doet.',
-    isWaar: true,
-    uitleg: 'Als een speler een dominante strategie heeft, zal hij deze altijd kiezen.'
-  },
-  {
-    id: 12,
-    stelling: 'Het individuele belang leidt in een gevangenendilemma tot een collectief nadeel.',
-    isWaar: true,
-    uitleg: 'Omdat beide voor eigen gewin gaan, missen ze de kans op het hogere gezamenlijke belang.'
-  },
-  {
-    id: 13,
-    stelling: 'Een prijzenoorlog is gunstig voor de winstmarges van bedrijven.',
-    isWaar: false,
-    uitleg: 'Een prijzenoorlog drukt de prijzen en daarmee de winstmarges omlaag.'
-  },
-  {
-    id: 14,
-    stelling: 'In een ultimatumspel bepaalt de tweede speler de verdeling van het geld.',
-    isWaar: false,
-    uitleg: 'De eerste speler doet een voorstel, de tweede speler kan dit alleen accepteren of weigeren.'
-  },
-  {
-    id: 15,
-    stelling: 'Een spelboom wordt gebruikt om de stappen in een sequentieel spel te visualiseren.',
-    isWaar: true,
-    uitleg: 'De boomstructuur laat zien welke keuzes na elkaar worden gemaakt.'
-  },
-  {
-    id: 16,
-    stelling: 'Een contract of overeenkomst kan helpen om uit een gevangenendilemma te komen.',
-    isWaar: true,
-    uitleg: 'Door afspraken vast te leggen en sanctioneerbaar te maken, wordt samenwerking afgedwongen.'
-  },
-  {
-    id: 17,
-    stelling: 'Sociale normen hebben geen invloed op de uitkomst van economische spellen.',
-    isWaar: false,
-    uitleg: 'Onbeschreven regels over wat "normaal" is (zoals eerlijkheid) sturen het gedrag van mensen aanzienlijk.'
-  },
-  {
-    id: 18,
-    stelling: 'Zelfbinding is een manier om de eigen keuzemogelijkheden in de toekomst te beperken om de ander te overtuigen.',
-    isWaar: true,
-    uitleg: 'Door jezelf vooraf vast te leggen, maak je je strategie geloofwaardig voor de ander.'
-  },
-  {
-    id: 19,
-    stelling: 'Verzonken kosten zijn kosten die je nog kunt terugverdienen als je stopt met een project.',
-    isWaar: false,
-    uitleg: 'Verzonken kosten zijn onherroepelijk gedaan en kunnen niet worden terugverdiend.'
-  }
+  // 1.1 & 1.2
+  { id: 1, stelling: 'Speltheorie bestudeert besluitvorming waarbij spelers rekening houden met elkaars acties.', isWaar: true, uitleg: 'Dit is de kern van speltheorie.' },
+  { id: 2, stelling: 'Een dominante strategie hangt af van de keuze die de tegenstander maakt.', isWaar: false, uitleg: 'Een dominante strategie is de beste keuze, ONGEACHT wat de ander doet.' },
+  { id: 3, stelling: 'In een Nash-evenwicht heeft niemand een reden om eenzijdig zijn strategie te veranderen.', isWaar: true, uitleg: 'Gegeven de keuze van de ander, is de eigen keuze optimaal.' },
+  { id: 4, stelling: 'Verzonken kosten moeten worden meegenomen in de beslissing over toekomstige investeringen.', isWaar: false, uitleg: 'Verzonken kosten zijn al gemaakt en kunnen niet worden terugverdiend; ze zijn irrelevant voor de toekomst.' },
+  { id: 5, stelling: 'Zelfbinding kan helpen om het vertrouwen van een tegenpartij te winnen.', isWaar: true, uitleg: 'Door je vooraf vast te leggen, maak je je acties geloofwaardig.' },
+  
+  // 1.3
+  { id: 6, stelling: 'Een negatief extern effect betekent dat de prijs van een product te laag is.', isWaar: true, uitleg: 'De maatschappelijke kosten (zoals vervuiling) zijn niet in de prijs verwerkt.' },
+  { id: 7, stelling: 'Straatverlichting is een voorbeeld van een individueel goed.', isWaar: false, uitleg: 'Straatverlichting is een collectief goed: je kunt niemand uitsluiten en het gebruik van de een gaat niet ten koste van de ander.' },
+  { id: 8, stelling: 'Meeliftergedrag komt vaak voor bij collectieve goederen.', isWaar: true, uitleg: 'Mensen profiteren van het goed zonder eraan mee te betalen.' },
+  { id: 9, stelling: 'Onderwijs is een quasi-collectief goed.', isWaar: true, uitleg: 'Het kan individueel worden afgenomen, maar de overheid betaalt grotendeels de kosten.' },
+  { id: 10, stelling: 'Collectieve dwang (zoals belasting) wordt ingezet om meeliftergedrag te voorkomen.', isWaar: true, uitleg: 'Hiermee dwingt de overheid iedereen om bij te dragen aan collectieve voorzieningen.' },
+  
+  // 1.4
+  { id: 11, stelling: 'De Europese Unie telt momenteel 27 lidstaten.', isWaar: true, uitleg: 'Sinds het vertrek van het VK zijn er 27 landen lid.' },
+  { id: 12, stelling: 'Maatschappelijk Verantwoord Ondernemen (MVO) draait alleen om het maken van winst.', isWaar: false, uitleg: 'MVO draait om de balans tussen People, Planet en Profit.' },
+  { id: 13, stelling: 'In een circulaire economie worden grondstoffen steeds opnieuw gebruikt.', isWaar: true, uitleg: 'Dit staat ook wel bekend als het "cradle to cradle" principe.' },
+  { id: 14, stelling: 'Secundaire arbeidsvoorwaarden gaan over het salaris en de werktijden.', isWaar: false, uitleg: 'Dat zijn de primaire arbeidsvoorwaarden. Secundaire gaan over extra\'s zoals vakantiedagen of training.' },
+  { id: 15, stelling: 'Een Centraal Akkoord wordt gesloten tussen vakbonden en individuele werknemers.', isWaar: false, uitleg: 'Het wordt gesloten op landelijk niveau tussen vakcentrales, werkgeverscentrales en de regering.' }
 ];
 
 export const begrippen: any[] = [
-  { naam: 'Prijsverlaging bij supermarkt', categorie: 'Simultaan', uitleg: 'Vaak reageren supermarkten direct op elkaars prijzen zonder de actie af te wachten.' },
-  { naam: 'Schaken', categorie: 'Sequentieel', uitleg: 'Bij schaken doe je om de beurt een zet, je reageert dus op de ander.' },
-  { naam: 'Boete voor kartelvorming', categorie: 'Niet-coöperatief', uitleg: 'Kartels zijn verboden afspraken in een niet-coöperatieve omgeving.' },
-  { naam: 'Ultimatumspel', categorie: 'Sequentieel', uitleg: 'De ene speler doet een voorstel, de ander reageert.' },
-  { naam: 'Steen-papier-schaar', categorie: 'Simultaan', uitleg: 'Beide spelers onthullen hun keuze op exact hetzelfde moment.' },
-  { naam: 'Bieden op een veiling (open)', categorie: 'Sequentieel', uitleg: 'Je ziet het bod van de ander en besluit dan of je eroverheen gaat.' },
-  { naam: 'Een eenmalige transactie op Marktplaats', categorie: 'Niet-coöperatief', uitleg: 'Zonder herhaling of sterke controle is er weinig prikkel tot samenwerking.' },
-  { naam: 'Strafschop bij voetbal', categorie: 'Simultaan', uitleg: 'De keeper en de schutter kiezen hun hoek op hetzelfde moment.' },
-  { naam: 'Dammen', categorie: 'Sequentieel', uitleg: 'Net als bij schaken bepalen spelers hun zet na de zet van de tegenstander.' },
-  { naam: 'Concurrentiestrijd tussen Coca-Cola en Pepsi', categorie: 'Simultaan', uitleg: 'Zij nemen vaak marketingbeslissingen zonder exact te weten wat de ander doet.' },
-  { naam: 'Samenwonen en de huur verdelen', categorie: 'Coöperatief', uitleg: 'Hier is sprake van een gezamenlijk belang en bindende afspraken.' },
-  { naam: 'Zelfbinding door een garantiecertificaat', categorie: 'Sequentieel', uitleg: 'Het bedrijf zet een eerste stap om de klant later te overtuigen.' },
-  { naam: 'Een prijzenoorlog tussen tankstations', categorie: 'Simultaan', uitleg: 'Prijzen worden vrijwel direct aangepast op basis van de borden bij de buren.' },
-  { naam: 'Onderhandelen over een CAO', categorie: 'Sequentieel', uitleg: 'Partijen reageren met biedingen en tegenbiedingen op elkaar.' }
+  { naam: 'Dijkverhoging door de overheid', categorie: 'Collectief goed', uitleg: 'Bescherming tegen water is niet splitsbaar en je kunt niemand uitsluiten.' },
+  { naam: 'Lawaai van een vliegveld', categorie: 'Negatief extern effect', uitleg: 'Omwonenden ervaren overlast waarvoor zij niet worden gecompenseerd in de prijs van een ticket.' },
+  { naam: 'Een diploma aan de hogeschool', categorie: 'Quasi-collectief goed', uitleg: 'Het is een individueel goed (onderwijs), maar wordt door de overheid gesubsidieerd.' },
+  { naam: 'Geen belasting betalen maar wel de weg gebruiken', categorie: 'Meeliftergedrag', uitleg: 'Profiteren van collectieve voorzieningen zonder bijdrage.' },
+  { naam: 'Cradle to cradle productie', categorie: 'Circulaire economie', uitleg: 'Hergebruik van materialen zonder kwaliteitsverlies.' },
+  { naam: 'Vakantiegeld en een lease-auto', categorie: 'Secundaire arbeidsvoorwaarden', uitleg: 'Aanvullende afspraken bovenop het basisloon.' },
+  { naam: 'De minister verklaart een cao voor de hele bouwsector', categorie: 'Algemeen verbindend', uitleg: 'De afspraken gelden nu voor alle werkgevers en werknemers in die sector.' },
+  { naam: 'Invoering van de Euro in de EU', categorie: 'Europese Unie', uitleg: 'Een voorbeeld van vergaande economische samenwerking.' }
 ];
 
 export const mutatieScenarios: MutatieScenario[] = [
   {
     id: 1,
-    scenario: 'In een prijzenoorlog verlagen beide supermarkten hun prijzen. Wat is het effect op de winst?',
+    scenario: 'Een fabriek investeert in een filter om de uitstoot van fijnstof te beperken. Wat is het effect op de maatschappelijke kosten?',
     oplossing: {
-      post1: 'Winst Supermarkt A',
+      post1: 'Maatschappelijke kosten',
       verandering1: '-',
-      post2: 'Winst Supermarkt B',
+      post2: 'Winst van de fabriek',
       verandering2: '-'
     },
-    uitleg: 'Bij een prijzenoorlog dalen de marges voor beide partijen, wat meestal leidt tot lagere winsten voor beiden.'
+    uitleg: 'De negatieve externe effecten nemen af (lagere maatschappelijke kosten), maar de investering drukt de winst van de fabriek.'
   },
   {
     id: 2,
-    scenario: 'Twee bedrijven besluiten een kartel te vormen en de prijzen te verhogen. Wat gebeurt er met de winst als ze zich beide aan de afspraak houden?',
+    scenario: 'De overheid verhoogt de subsidie op zonnepanelen. Wat gebeurt er met de consumentenwelvaart en de uitstoot?',
     oplossing: {
-      post1: 'Winst Bedrijf 1',
+      post1: 'Welvaart consument',
       verandering1: '+',
-      post2: 'Winst Bedrijf 2',
-      verandering2: '+'
-    },
-    uitleg: 'Door samen te werken (coöperatie) kunnen bedrijven hun gezamenlijke winst verhogen ten opzichte van de concurrentiesituatie.'
-  },
-  {
-    id: 3,
-    scenario: 'Een van de twee kartelpartners besluit stiekem toch de prijs te verlagen (cheating) terwijl de ander de prijs hoog houdt. Wat is het effect?',
-    oplossing: {
-      post1: 'Winst Bedrieger',
-      verandering1: '+',
-      post2: 'Winst Trouwe Partner',
+      post2: 'CO2-uitstoot',
       verandering2: '-'
     },
-    uitleg: 'De bedrieger pakt een groot marktaandeel en verhoogt zijn winst, terwijl de trouwe partner klanten verliest en zijn winst ziet dalen.'
+    uitleg: 'Subsidies verhogen de welvaart voor de gebruiker en stimuleren milieuvriendelijke keuzes.'
   }
 ];
 
 export const rekenvragen: Rekenvraag[] = [
   {
     id: 1,
-    titel: 'Bibi en Stefan opbrengstenmatrix',
+    titel: 'Milieubeleid in het gevangenendilemma',
     items: [
-      { naam: 'Beide wel trouwfoto\'s', bedrag: -1000, type: 'Bibi' },
-      { naam: 'Bibi wel, Stefan niet', bedrag: 2000, type: 'Bibi' },
-      { naam: 'Bibi niet, Stefan wel', bedrag: 1000, type: 'Bibi' },
-      { naam: 'Beide niet', bedrag: 0, type: 'Bibi' }
+      { naam: 'Beide landen voeren beleid in (Netto opbrengst)', bedrag: 4, type: 'Nederland' },
+      { naam: 'Alleen Duitsland voert in (Opbrengst NL)', bedrag: 7, type: 'Nederland' },
+      { naam: 'Alleen Nederland voert in (Opbrengst NL)', bedrag: -3, type: 'Nederland' },
+      { naam: 'Geen beleid (Opbrengst NL)', bedrag: 0, type: 'Nederland' }
     ],
-    vraag: 'Wat is de maximale opbrengst voor Bibi in deze matrix?',
-    correctAntwoord: 2000,
-    uitleg: 'Kijkend naar de bedragen voor Bibi (eerste getal in de matrix op pag. 10), is € 2.000 het hoogste bedrag dat zij kan verdienen.'
+    vraag: 'Wat is de netto-opbrengst voor Nederland als zij als enige milieubeleid invoeren?',
+    correctAntwoord: -3,
+    uitleg: 'Als Nederland de kosten draagt (12) maar de opbrengst slechts 9 is, is er een nettoverlies. Zie matrix op pag. 13 van theorie.'
   }
 ];
